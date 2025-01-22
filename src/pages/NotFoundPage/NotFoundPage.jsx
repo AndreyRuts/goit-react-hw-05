@@ -1,9 +1,7 @@
-// import s from './NotFoundPage.module.css';
+import s from './NotFoundPage.module.css';
 
 const NotFoundPage = () => {
-    return (
-        <p>#NotFoundPage</p>
-    );
+    return <h3 className={s.notFound}>Not found 404</h3>
 };
 
 export default NotFoundPage;
