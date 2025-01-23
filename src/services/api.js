@@ -10,17 +10,51 @@ const options = {
 };
 
 
-export const fetchData = async () => {
+export const fetchTrendingMovies = async () => {
     try {
         const { data } = await axios.get(`${BASE_URL}/trending/movie/day`, options);
-        console.log(data);
-        return data;
-        
-        
+        return data.results;    
+       
     } catch (error) {
         console.log(error);
     }
 };
+
+export const fetchMovieDetails = async (movieId) => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/movie/${movieId}`, options);      
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// export const fetchMovieReviews = async () => {
+//     try {
+//         const { data } = await axios.get(`${BASE_URL}`, options);
+//         return data.results;    
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+// export const fetchMovieCredits = async () => {
+//     try {
+//         const { data } = await axios.get(`${BASE_URL}`, options);
+//         return data.results;    
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+// export const searchMovies = async () => {
+//     try {
+//         const { data } = await axios.get(`${BASE_URL}`, options);
+//         return data.results;    
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 
 
