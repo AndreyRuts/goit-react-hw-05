@@ -38,14 +38,14 @@ export const fetchMovieDetails = async (movieId) => {
 //     }
 // };
 
-// export const fetchMovieCredits = async () => {
-//     try {
-//         const { data } = await axios.get(`${BASE_URL}`, options);
-//         return data.results;    
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+export const fetchMovieCredits = async (movieId) => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/movie/${movieId}/credits`, options);
+        return data;    
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 // export const searchMovies = async () => {
 //     try {
