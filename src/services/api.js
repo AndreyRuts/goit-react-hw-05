@@ -29,14 +29,14 @@ export const fetchMovieDetails = async (movieId) => {
     }
 };
 
-// export const fetchMovieReviews = async () => {
-//     try {
-//         const { data } = await axios.get(`${BASE_URL}`, options);
-//         return data.results;    
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+export const fetchMovieReviews = async (movieId) => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/movie/${movieId}/reviews`, options);
+        return data;    
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 export const fetchMovieCredits = async (movieId) => {
     try {
@@ -47,14 +47,17 @@ export const fetchMovieCredits = async (movieId) => {
     }
 };
 
-// export const searchMovies = async () => {
-//     try {
-//         const { data } = await axios.get(`${BASE_URL}`, options);
-//         return data.results;    
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+export const searchMovies = async (query) => {
+    try {
+        const { data } = await axios.get(`${BASE_URL}/search/movie`, {
+            headers: options.headers,
+            params: { query },
+        });
+        return data.results;    
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
 
